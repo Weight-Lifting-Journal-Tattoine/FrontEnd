@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // URL shared by every endpoint
-axios.defaults.baseURL = "https://lambda-guidr.herokuapp.com/api";
+axios.defaults.baseURL = "https://get-hercules.herokuapp.com/api/";
 
 axios.interceptors.request.use(config => {
   // Add a token to every outgoing request
