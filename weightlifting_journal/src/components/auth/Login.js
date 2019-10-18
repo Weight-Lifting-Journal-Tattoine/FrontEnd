@@ -4,27 +4,14 @@ import Axios from "axios";
 import * as Yup from "yup";
 
 const LoginForm = ({ errors, touched }) => {
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    const dummyCredentials = {
-      username: "admin",
-      password: "password"
-    };
-
-    Axios.post("auth/login", dummyCredentials).then(res => {
-      console.log(res);
-    });
-  };
-
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <fieldset>
         <label>Username</label>
         {touched.username && errors.username && (
           <p className="error">{errors.username}</p>
         )}
-        <Field type="text" name="username" placeholder="Arnold" />
+        <Field type="text" name="username" placeholder="TheGovernator47" />
       </fieldset>
       <fieldset>
         <label>Password</label>
@@ -57,13 +44,8 @@ const Login = withFormik({
     password: Yup.string().required("Password is required.")
   }),
 
-  handleSubmit(values, { props }) {
-    const dummyCredentials = {
-      username: "admin",
-      password: "password"
-    };
-
-    Axios.post("auth/login", dummyCredentials).then(res => {
+  handleSubmit(values) {
+    Axios.post("auth/login", values).then(res => {
       console.log(res);
     });
   }
