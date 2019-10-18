@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 
 function Dashboard() {
   const [journals, setJournals] = useState([]);
+  const { user } = useContext(UserContext);
 
   const upper = journals.filter(item => {
     return item.region === "Chest";
@@ -24,7 +26,8 @@ function Dashboard() {
         );
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [user]);
+  console.log(user);
 
   return (
     <div>
@@ -48,11 +51,11 @@ function Dashboard() {
 
 export default Dashboard;
 
-const user = {
-  created_at: "2019-06-23",
-  email: "admin.gmail.com",
-  id: 1,
-  lastName: "admin",
-  firstName: "admin",
-  username: "admin"
-};
+// const user = {
+//   created_at: "2019-06-23",
+//   email: "admin.gmail.com",
+//   id: 1,
+//   lastName: "admin",
+//   firstName: "admin",
+//   username: "admin"
+// };
