@@ -3,7 +3,7 @@ import { Form, Field, withFormik } from "formik";
 import Axios from "axios";
 import * as Yup from "yup";
 
-const LoginForm = ({ errors, touched }) => {
+const LoginForm = ({ errors, touched, setUser }) => {
   return (
     <Form>
       <fieldset>
@@ -44,8 +44,12 @@ const Login = withFormik({
     password: Yup.string().required("Password is required.")
   }),
 
-  handleSubmit(values) {
+  handleSubmit(values, { props }) {
     Axios.post("auth/login", values).then(res => {
+      if (res.data.token) {
+        props.history.push("/dashboard");
+        props.setUser(res.data.user);
+      }
       console.log(res);
     });
   }
