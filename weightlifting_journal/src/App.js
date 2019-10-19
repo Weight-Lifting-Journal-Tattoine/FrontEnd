@@ -10,7 +10,6 @@ import "./App.css";
 function App() {
   const [user, setUser] = useState({});
   return (
-
     <UserContext.Provider value={{ user }}>
       <div className="App">
         <Route
