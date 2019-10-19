@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import Axios from "axios";
+
+//Journal
+// {
+//  userId: int,
+//  date: "",    
+//  region: upperbody, lowerbody, core; per group
+// }
+//local state 
+//form with 2 inputs 
+//onChange handler 
+//handle submit 
+    //axios.post 
+
+//values => id, name, date
+
+
+const CreateJournal = props => {
+    const[workout, setWorkout] = useState({
+        date: "",
+        typeOfWorkout: ""
+
+    })
+
+const inputHandler = e => {
+    setWorkout({ ...workout, [e.target.name]: e.target.value})
+}
+console.log("workout:", workout);
+
+
+
+const handleSubmit = () => {
+    const workoutValues = {
+        date: workout.date,
+        region: workout.typeOfWorkout,
+        userId: localStorage.id
+    }
+    Axios.post("api/restricted/journals", workoutValues)
+        .then(function (res) {
+            console.log("Res:", res)
+        })
+        .catch()
+      
+      }
+
+return (
+    <div className = "NameWorkoutTop">
+        <div className ="NameWorkoutContainer">
+            <div className="name-workout-card">
+                <h2>What are you lifting today bro?</h2>
+                <div className="BottomOfCard">
+                    <form onSubmit={handleSubmit} >
+                        
+                        <input 
+                            className="date"
+                            type="text"
+                            name="date"
+                            value={workout.date}
+                            placeholder="mm/dd/yy"
+                            onChange={inputHandler}
+                        />
+
+
+                        <input 
+                            className="typeofworkout" 
+                            type="text"
+                            name="typeOfWorkout"
+                            value={workout.typeOfWorkout}
+                            placeholder="Type your gains bro"
+                            onChange={inputHandler}
+                        />
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+)
+}
+export default CreateJournal
