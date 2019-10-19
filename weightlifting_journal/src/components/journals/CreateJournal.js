@@ -1,20 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
-//Journal
-// {
-//  userId: int,
-//  date: "",    
-//  region: upperbody, lowerbody, core; per group
-// }
-//local state 
-//form with 2 inputs 
-//onChange handler 
-//handle submit 
-    //axios.post 
-
-//values => id, name, date
-
 
 const CreateJournal = props => {
     const[workout, setWorkout] = useState({
@@ -26,22 +12,22 @@ const CreateJournal = props => {
 const inputHandler = e => {
     setWorkout({ ...workout, [e.target.name]: e.target.value})
 }
-console.log("workout:", workout);
 
 
-
-const handleSubmit = () => {
+const handleSubmit = event => {
+    event.preventDefault()
     const workoutValues = {
         date: workout.date,
         region: workout.typeOfWorkout,
         userId: localStorage.id
     }
-    Axios.post("api/restricted/journals", workoutValues)
+    console.log(workoutValues.userId)
+    Axios.post("restricted/journals/", workoutValues)
         .then(function (res) {
+
             console.log("Res:", res)
         })
         .catch()
-      
       }
 
 return (
