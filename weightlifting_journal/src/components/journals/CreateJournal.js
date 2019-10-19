@@ -48,10 +48,10 @@ return (
     <div className = "NameWorkoutTop">
         <div className ="NameWorkoutContainer">
             <div className="name-workout-card">
-                <h2>What are you lifting today bro?</h2>
+                <h2>What Are You Lifting Bro?</h2>
                 <div className="BottomOfCard">
                     <form onSubmit={handleSubmit} >
-                        
+                        Date: 
                         <input 
                             className="date"
                             type="text"
@@ -60,17 +60,23 @@ return (
                             placeholder="mm/dd/yy"
                             onChange={inputHandler}
                         />
+                      
+                        <label>
+                            Choose Your Gains: 
+                            <select className="typeOfWorkout"
+                                    name="typeOfWorkout"
+                                    value={workout.typeOfWorkout}
+                                    onChange={inputHandler}
+                            >
+                                <option />
+                                <option>Upper Body</option>
+                                <option>Lower Body</option>
+                                <option>Core</option>
 
+                            </select>
+                        </label>
 
-                        <input 
-                            className="typeofworkout" 
-                            type="text"
-                            name="typeOfWorkout"
-                            value={workout.typeOfWorkout}
-                            placeholder="Type your gains bro"
-                            onChange={inputHandler}
-                        />
-
+                        <button onSubmit={() =>handleSubmit()}>JUST DO IT!</button>
                         
                     </form>
                 </div>
