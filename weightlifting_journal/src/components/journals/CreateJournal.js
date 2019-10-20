@@ -41,7 +41,7 @@ return (
                             type="text"
                             name="date"
                             value={workout.date}
-                            placeholder="mm/dd/yy"
+                            placeholder="mm/dd/yyyy"
                             onChange={inputHandler}
                         />
                       
