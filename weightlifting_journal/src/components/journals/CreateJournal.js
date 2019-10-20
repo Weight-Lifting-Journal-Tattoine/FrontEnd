@@ -32,7 +32,7 @@ return (
     <div className = "NameWorkoutTop">
         <div className ="NameWorkoutContainer">
             <div className="name-workout-card">
-                <h2>Lets Journalize Those Gains Bro</h2>
+                <h2>Let's Journalize Those Gains Bro</h2>
                 <div className="BottomOfCard">
                     <form onSubmit={handleSubmit} >
                         Date: 
