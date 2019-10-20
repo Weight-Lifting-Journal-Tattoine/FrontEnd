@@ -6,13 +6,11 @@ const CreateJournal = props => {
     const[workout, setWorkout] = useState({
         date: "",
         typeOfWorkout: ""
-
     })
 
 const inputHandler = e => {
     setWorkout({ ...workout, [e.target.name]: e.target.value})
 }
-
 
 const handleSubmit = event => {
     event.preventDefault()
@@ -21,7 +19,7 @@ const handleSubmit = event => {
         region: workout.typeOfWorkout,
         userId: localStorage.id
     }
-    console.log(workoutValues.userId)
+
     Axios.post("restricted/journals/", workoutValues)
         .then(function (res) {
             // props.history.push(`/journallist/${userId}`);
@@ -34,7 +32,7 @@ return (
     <div className = "NameWorkoutTop">
         <div className ="NameWorkoutContainer">
             <div className="name-workout-card">
-                <h2>What Are You Lifting Bro?</h2>
+                <h2>Lets Journalize Those Gains Bro</h2>
                 <div className="BottomOfCard">
                     <form onSubmit={handleSubmit} >
                         Date: 
@@ -62,7 +60,7 @@ return (
                             </select>
                         </label>
 
-                        <button onSubmit={() =>handleSubmit()}>JUST DO IT!</button>
+                        <button onSubmit={() =>handleSubmit()}>JUST, DO IT!</button>
                         
                     </form>
                 </div>
