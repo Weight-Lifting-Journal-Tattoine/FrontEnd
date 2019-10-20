@@ -25,14 +25,15 @@ const handleSubmit = event => {
             // props.history.push(`/journallist/${userId}`);
             console.log("Res:", res)
         })
-        .catch()
+        .catch(err => 
+            console.log(err))
       }
 
 return (
     <div className = "NameWorkoutTop">
         <div className ="NameWorkoutContainer">
             <div className="name-workout-card">
-                <h2>Let's Journalize Those Gains Bro</h2>
+                <h2>Let's Journalize Those Gains Bro!</h2>
                 <div className="BottomOfCard">
                     <form onSubmit={handleSubmit} >
                         Date: 
@@ -60,7 +61,7 @@ return (
                             </select>
                         </label>
 
-                        <button onSubmit={() =>handleSubmit()}>JUST, DO IT!</button>
+                        <button onSubmit={() =>handleSubmit()}>BOOK IT!</button>
                         
                     </form>
                 </div>
