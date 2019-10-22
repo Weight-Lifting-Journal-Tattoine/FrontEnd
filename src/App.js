@@ -26,14 +26,8 @@ function App() {
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
-        <PrivateRoute
-          path="/dashboard"
-          render={props => <Dashboard {...props} />}
-        />
-        <PrivateRoute
-          path="/journal/:id"
-          render={props => <Journal {...props} />}
-        />
+        <PrivateRoute path="/" component={Dashboard} />
+        <PrivateRoute path="/journal/:id" component={Journal} />
         <PrivateRoute path="/journal" component={CreateJournal} />
       </div>
     </UserContext.Provider>
