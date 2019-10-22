@@ -49,8 +49,8 @@ const Login = withFormik({
       if (res.data.token) {
         props.history.push("/dashboard");
         props.setUser(res.data.user);
+        localStorage.setItem("id", res.data.user.id)
       }
-      console.log(res);
     });
   }
 })(LoginForm);
