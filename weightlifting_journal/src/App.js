@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Login from "./components/auth/Login";
 import { UserContext } from "./contexts/UserContext";
 import Dashboard from "./components/journals/Dashboard";
+import CreateJournal from "./components/journals/CreateJournal.js";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,11 @@ function App() {
           exact
           render={props => <Login {...props} setUser={setUser} />}
         />
-        <Route path="/dashboard" component={Dashboard} />
+
+
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/journal" component={CreateJournal} />
+
       </div>
     </UserContext.Provider>
   );
