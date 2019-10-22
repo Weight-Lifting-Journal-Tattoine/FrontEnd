@@ -1,8 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
+import JournalList from "./JournalList";
+import {
+  Container,
+  Header,
+  Logo,
+  Name,
+  UserName
+} from "../../styled/DashStyles";
 
-function Dashboard() {
+function Dashboard(props) {
   const [journals, setJournals] = useState([]);
   const { user } = useContext(UserContext);
 
@@ -27,25 +35,30 @@ function Dashboard() {
       })
       .catch(err => console.log(err));
   }, [user]);
-  console.log(user);
 
   return (
-    <div>
-      <h2>
-        {user.firstName} {user.lastName}
-      </h2>
-      <h3>{user.username}</h3>
-      <span>Journals logged: {journals.length}</span>
+    <Container>
+      <Header>
+        <Logo>
+          <span>Pro</span>
+          <span>Lift</span>
+        </Logo>
+        <Name>{/* {user.firstName} {user.lastName} */}Chris Adams</Name>
+      </Header>
+      <UserName>{/*user.username*/} cladams0203</UserName>
       <div>
+        <span>Journals logged: {journals.length}</span>
         <h4>Journals by Body Region</h4>
         <span>
-          Upper Body: {upper.length} Lower Body: {lower.length} Core:{" "}
+          Upper Body: {upper.length} Lower Body: {lower.length} Core:
           {core.length}
         </span>
       </div>
-      <button>Journals List</button>
       <button>Create New Journal</button>
-    </div>
+      <div>
+        <JournalList journals={journals} setId={props.setId} />
+      </div>
+    </Container>
   );
 }
 
