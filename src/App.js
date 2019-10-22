@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./interceptor";
 import { Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/auth/Login";
-
 import Register from "./components/auth/Register";
-
 import Journal from "./components/journals/Journal";
 import { UserContext } from "./contexts/UserContext";
 import Dashboard from "./components/journals/Dashboard";
@@ -22,18 +21,20 @@ function App() {
           exact
           render={props => <Login {...props} setUser={setUser} />}
         />
-
         <Route
           path="/register"
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
-        
-
-        <Route path="/dashboard" render={props => <Dashboard {...props} />} />
-        <Route path="/journal/:id" render={props => <Journal {...props} />} />
-        <Route path="/journal" component={CreateJournal} />
-
+        <PrivateRoute
+          path="/dashboard"
+          render={props => <Dashboard {...props} />}
+        />
+        <PrivateRoute
+          path="/journal/:id"
+          render={props => <Journal {...props} />}
+        />
+        <PrivateRoute path="/journal" component={CreateJournal} />
       </div>
     </UserContext.Provider>
   );

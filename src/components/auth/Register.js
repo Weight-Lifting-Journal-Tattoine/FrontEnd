@@ -39,7 +39,7 @@ const RegisterForm = ({ errors, touched, setUser }) => {
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <Field type="text" name="password" placeholder="******" />
+        <Field type="password" name="password" placeholder="******" />
       </fieldset>
       <button type="submit">Submit</button>
     </Form>

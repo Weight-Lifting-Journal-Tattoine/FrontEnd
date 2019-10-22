@@ -18,7 +18,7 @@ const LoginForm = ({ errors, touched, setUser }) => {
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <Field type="text" name="password" placeholder="******" />
+        <Field type="password" name="password" placeholder="******" />
       </fieldset>
       <button type="submit">Submit</button>
     </Form>
@@ -49,7 +49,7 @@ const Login = withFormik({
       if (res.data.token) {
         props.history.push("/dashboard");
         props.setUser(res.data.user);
-        localStorage.setItem("id", res.data.user.id)
+        localStorage.setItem("id", res.data.user.id);
       }
     });
   }
