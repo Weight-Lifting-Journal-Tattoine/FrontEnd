@@ -46,8 +46,10 @@ function CreateExercise({ errors, touched }) {
 
 /*=============== FORMIK WRAP ===============*/
 const FormikCreateExercise = withFormik({
-  mapPropsToValues({ name, sets, reps, weight }) {
+  mapPropsToValues({ name, sets, reps, weight, journal }) {
     return {
+      journalId: journal.journalId,
+      userId: journal.userId,
       name: name || "",
       sets: sets || undefined,
       reps: reps || undefined,
@@ -70,7 +72,7 @@ const FormikCreateExercise = withFormik({
   }),
 
   /*===== Submit Handler =====*/
-  handleSubmit(values, { setSubmitting, resetForm }) {
+  handleSubmit(values, { props, setSubmitting, resetForm }) {
     axios
       .post("restricted/exercises/", values)
       .then(response => {
