@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Field, withFormik } from "formik";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import * as Yup from "yup";
 
@@ -21,6 +22,10 @@ const LoginForm = ({ errors, touched, setUser }) => {
         <Field type="password" name="password" placeholder="******" />
       </fieldset>
       <button type="submit">Submit</button>
+      <p>
+        Not a member?<span> </span>
+        <Link to="/">Register</Link>.
+      </p>
     </Form>
   );
 };
