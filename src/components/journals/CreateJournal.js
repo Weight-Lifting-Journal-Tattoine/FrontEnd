@@ -3,6 +3,7 @@ import Axios from "axios";
 
 
 const CreateJournal = props => {
+    console.log(props)
     const[workout, setWorkout] = useState({
         date: "",
         typeOfWorkout: ""
@@ -15,6 +16,7 @@ const inputHandler = e => {
 const handleSubmit = event => {
     event.preventDefault()
     const workoutValues = {
+        userId: props.match.params.id,
         date: workout.date,
         region: workout.typeOfWorkout,
         userId: localStorage.id
@@ -22,7 +24,7 @@ const handleSubmit = event => {
 
     Axios.post("restricted/journals/", workoutValues)
         .then(function (res) {
-            // props.history.push(`/journallist/${userId}`);
+            props.history.push(`/dashboard`);
             console.log("Res:", res)
         })
         .catch(err => 
@@ -39,7 +41,7 @@ return (
                         Date: 
                         <input 
                             className="date"
-                            type="text"
+                            type="date"
                             name="date"
                             value={workout.date}
                             placeholder="mm/dd/yyyy"
