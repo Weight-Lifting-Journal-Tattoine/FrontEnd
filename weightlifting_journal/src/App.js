@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./interceptor";
 import { Route } from "react-router-dom";
 import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import { UserContext } from "./contexts/UserContext";
 import Dashboard from "./components/journals/Dashboard";
 import "./App.css";
@@ -15,6 +16,11 @@ function App() {
           path="/login"
           exact
           render={props => <Login {...props} setUser={setUser} />}
+        />
+        <Route
+          path="/register"
+          exact
+          render={props => <Register {...props} setUser={setUser} />}
         />
         <Route path="/dashboard" component={Dashboard} />
       </div>
