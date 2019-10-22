@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
+import { Link } from "react-router-dom";
 import {
   Container,
   Header,
@@ -43,9 +44,11 @@ function Dashboard(props) {
           <span>Pro</span>
           <span>Lift</span>
         </Logo>
-        <Name>{/* {user.firstName} {user.lastName} */}Chris Adams</Name>
+        <Name>
+          {user.firstName} {user.lastName}
+        </Name>
       </Header>
-      <UserName>{/*user.username*/} cladams0203</UserName>
+      <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
         <h4>Journals by Body Region</h4>
@@ -54,7 +57,9 @@ function Dashboard(props) {
           {core.length}
         </span>
       </div>
-      <button>Create New Journal</button>
+      <Link to={`/newjournal/${user.id}`}>
+        <button>Create New Journal</button>
+      </Link>
       <div>
         <JournalList journals={journals} setId={props.setId} />
       </div>
