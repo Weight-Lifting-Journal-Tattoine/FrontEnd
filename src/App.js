@@ -22,11 +22,11 @@ function App() {
           render={props => <Login {...props} setUser={setUser} />}
         />
         <Route
-          path="/register"
+          path="/"
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
-        <PrivateRoute path="/" component={Dashboard} />
+        <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/journal/:id" component={Journal} />
         <PrivateRoute path="/journal" component={CreateJournal} />
       </div>
