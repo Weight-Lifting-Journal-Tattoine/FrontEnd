@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   Container,
   Header,
@@ -44,7 +44,9 @@ function Dashboard(props) {
           <span>Pro</span>
           <span>Lift</span>
         </Logo>
-        <Name>{user.firstName} {user.lastName}</Name>
+        <Name>
+          {user.firstName} {user.lastName}
+        </Name>
       </Header>
       <UserName>{user.username}</UserName>
       <div>
@@ -55,7 +57,7 @@ function Dashboard(props) {
           {core.length}
         </span>
       </div>
-      <Link to={`/newjournal/${user.id}`} >
+      <Link to={`/newjournal/${user.id}`}>
         <button>Create New Journal</button>
       </Link>
       <div>

@@ -28,12 +28,10 @@ function App() {
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
-        
 
         <Route path="/dashboard" render={props => <Dashboard {...props} />} />
         <Route path="/journal/:id" render={props => <Journal {...props} />} />
         <Route path="/newjournal/:id" component={CreateJournal} />
-
       </div>
     </UserContext.Provider>
   );
