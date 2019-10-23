@@ -16,13 +16,13 @@ function Dashboard(props) {
   const { user } = useContext(UserContext);
 
   const upper = journals.filter(item => {
-    return item.region === "Chest";
+    return item.region === "Upper Body";
   });
   const lower = journals.filter(item => {
-    return item.region === "Legs";
+    return item.region === "Lower Body";
   });
   const core = journals.filter(item => {
-    return item.region === "Abs";
+    return item.region === "Core";
   });
 
   useEffect(() => {
