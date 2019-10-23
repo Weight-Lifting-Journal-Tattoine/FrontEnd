@@ -32,7 +32,7 @@ function App() {
 
         <Route path="/dashboard" render={props => <Dashboard {...props} />} />
         <Route path="/journal/:id" render={props => <Journal {...props} />} />
-        <Route path="/journal" render={props => <CreateJournal {...props} />} />
+        <Route path="/journals" render={props => <CreateJournal {...props} />} />
 
       </div>
     </UserContext.Provider>

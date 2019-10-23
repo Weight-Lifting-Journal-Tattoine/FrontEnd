@@ -4,7 +4,7 @@ import Axios from "axios";
 function Journal(props) {
   useEffect(() => {
     const id = props.match.params.id;
-    Axios.get(`restricted/exercises/journal/${id}`)
+    Axios.get(`restricted/exercises/journal/${localStorage.id}`)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }, [props.match.params.id]);
