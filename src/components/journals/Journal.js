@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import CreateExercise from "./CreateExercise.js";
+import { UserContext } from "../../contexts/UserContext.js";
 
 function Journal(props) {
   const [button, setButton] = useState(false);
+  const { user } = useContext(UserContext);
+
+  console.log(user);
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -17,7 +21,7 @@ function Journal(props) {
   return (
     <div>
       {button ? (
-        <CreateExercise journal={props.match.params.id} user={props.user} />
+        <CreateExercise journal={props.match.params.id} user={user} />
       ) : (
         <button onClick={() => setButton(true)}>Create Exercise</button>
       )}
