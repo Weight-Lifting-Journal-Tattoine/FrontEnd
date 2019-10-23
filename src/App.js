@@ -43,16 +43,17 @@ function App() {
 
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/journal/:id" component={Journal} />
-        <PrivateRoute path="/journal" component={CreateJournal} />
+        <PrivateRoute exact path="/journal" component={CreateJournal} />
 
-
-      
         <Route
           path="/newjournal/:id"
           render={props => <CreateJournal {...props} user={user} />}
         />
+<<<<<<< HEAD
 
 >>>>>>> 34ccbabd3520715b4b5991163e7d6d2deecebfec
+=======
+>>>>>>> 24c7d113bf0f3c91b6b86ea9f63fba1dea6da26b
       </div>
     </UserContext.Provider>
   );
