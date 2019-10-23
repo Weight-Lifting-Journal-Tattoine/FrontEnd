@@ -22,7 +22,7 @@ const handleSubmit = event => {
 
     Axios.post("restricted/journals/", workoutValues)
         .then(function (res) {
-            // props.history.push(`/journal/${userId}`);
+            props.history.push(`/journal/${userId}`);
             console.log("Res:", res)
         })
         .catch(err => 
