@@ -34,7 +34,10 @@ function App() {
           path="/journal/:id"
           render={props => <Journal {...props} user={user} />}
         />
-        <Route path="/newjournal/:id" component={CreateJournal} />
+        <Route
+          path="/newjournal/:id"
+          render={props => <CreateJournal {...props} user={user} />}
+        />
       </div>
     </UserContext.Provider>
   );
