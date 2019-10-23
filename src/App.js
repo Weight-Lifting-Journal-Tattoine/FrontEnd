@@ -26,6 +26,7 @@ function App() {
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
+<<<<<<< HEAD
 <<<<<<< HEAD:weightlifting_journal/src/App.js
         
 
@@ -38,6 +39,20 @@ function App() {
         <PrivateRoute path="/journal/:id" component={Journal} />
         <PrivateRoute path="/journal" component={CreateJournal} />
 >>>>>>> 96c0b900b4ac061e43a2f8d8c72e4bd841fcb146:src/App.js
+=======
+
+        <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/journal/:id" component={Journal} />
+        <PrivateRoute path="/journal" component={CreateJournal} />
+
+
+      
+        <Route
+          path="/newjournal/:id"
+          render={props => <CreateJournal {...props} user={user} />}
+        />
+
+>>>>>>> 34ccbabd3520715b4b5991163e7d6d2deecebfec
       </div>
     </UserContext.Provider>
   );
