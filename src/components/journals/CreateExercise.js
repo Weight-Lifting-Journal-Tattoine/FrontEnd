@@ -27,7 +27,7 @@ function CreateExercise({ errors, touched }) {
                   : item === "weight"
                   ? error
                     ? "Must be 0 or higher"
-                    : "e.g. 1"
+                    : "e.g. 1 (lbs)"
                   : error
                   ? "Must be 1 or higher"
                   : "e.g. 1"
@@ -51,9 +51,9 @@ const FormikCreateExercise = withFormik({
       journalId: journal,
       userId: user.id,
       name: name || "",
-      sets: sets || undefined,
-      reps: reps || undefined,
-      weight: weight || undefined
+      sets: sets || 0,
+      reps: reps || 0,
+      weight: weight || 0
     };
   },
 
@@ -79,6 +79,8 @@ const FormikCreateExercise = withFormik({
         console.log(response);
         resetForm();
         setSubmitting(false);
+        props.setExercises([...props.exercises, response.data.exercise]);
+        props.setButton(false);
       })
       .catch(error => {
         console.log(error);
