@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Field, withFormik } from "formik";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import * as Yup from "yup";
 
@@ -18,9 +19,13 @@ const LoginForm = ({ errors, touched, setUser }) => {
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <Field type="text" name="password" placeholder="******" />
+        <Field type="password" name="password" placeholder="******" />
       </fieldset>
       <button type="submit">Submit</button>
+      <p>
+        Not a member?<span> </span>
+        <Link to="/">Register</Link>.
+      </p>
     </Form>
   );
 };

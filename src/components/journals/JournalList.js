@@ -23,7 +23,6 @@ function JournalList(props) {
             <JournalCard
               journal={journal}
               journalExercises={journalExercises}
-              setId={props.setId}
             />
           </Link>
         );
