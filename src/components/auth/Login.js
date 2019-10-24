@@ -12,9 +12,12 @@ const LoginForm = ({ errors, touched, setUser }) => {
     
         
     <Container>
+      <Header>
       <LogoStyle>
-        <span>Pro Lift</span>
+        <span>Pro</span> 
+        <span>Lift</span>
       </LogoStyle>
+      </Header>
     
     <StyledForm>
       
@@ -116,7 +119,7 @@ const UserNamePasswordLabel = styled.label`
 `
 
 const Container = styled.div`
-  background: #991c27;
+  background: #ebebeb;
   width: 100%;
   height: 100%;
   padding-bottom: 0px;
@@ -135,18 +138,24 @@ const ButtonStyle = styled.button`
   transition: 1s;
 `
 
-export const LogoStyle = styled.div`
-  color: #252627;
-  justify-content: center;
-  font-size: 2.5rem;
-  text-shadow: #ebebeb 1px 1px 0;
-  font-family: "Alfa Slab One", cursive;
-  width: 100%;
+const LogoStyle = styled.div`
+color: #252627;
+font-size: 2.5rem;
+text-shadow: #ebebeb 1px 1px 0;
+font-family: "Alfa Slab One", cursive;
+width: 100%;
+display: flex;
+justify-content: flex-start;
+padding-left: 20px;
+span:first-child {
+  color: #991c27;
+}
+`;
+
+const Header = styled.div`
+  background-color: rgba(37, 38, 39, 0.3);
+  padding: 20px 0;
   display: flex;
-  justify-content: flex-start;
-  padding-left: 20px;
-  span:first-child {
-  
-  }
+  flex-direction: column;
 `;
 
