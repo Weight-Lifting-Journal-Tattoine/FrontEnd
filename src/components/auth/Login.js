@@ -118,8 +118,9 @@ const ButtonStyle = styled.button`
   width:100%;
   border-radius: 10px;
   color: #f3f3f3;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   transition: 1s;
+  font-family: "Alfa Slab One", cursive;
 `
 
 const LogoStyle = styled.div`

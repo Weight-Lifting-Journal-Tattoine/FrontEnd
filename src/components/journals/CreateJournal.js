@@ -46,7 +46,7 @@ const CreateJournal = props => {
             onChange={inputHandler}
           />
         </label>
-          
+          <span></span>
           <label>
             <Date>Select a Region</Date>
             <select
