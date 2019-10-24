@@ -3,13 +3,8 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Header,
-  Logo,
-  Name,
-  UserName
-} from "../../styled/DashStyles";
+import Navigation from "../Navigation";
+import { Container, UserName } from "../../styled/DashStyles";
 
 function Dashboard(props) {
   const [journals, setJournals] = useState([]);
@@ -39,15 +34,7 @@ function Dashboard(props) {
 
   return (
     <Container>
-      <Header>
-        <Logo>
-          <span>Pro</span>
-          <span>Lift</span>
-        </Logo>
-        <Name>
-          {user.firstName} {user.lastName}
-        </Name>
-      </Header>
+      <Navigation user={user} {...props} />
       <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
@@ -68,12 +55,3 @@ function Dashboard(props) {
 }
 
 export default Dashboard;
-
-// const user = {
-//   created_at: "2019-06-23",
-//   email: "admin.gmail.com",
-//   id: 1,
-//   lastName: "admin",
-//   firstName: "admin",
-//   username: "admin"
-// };
