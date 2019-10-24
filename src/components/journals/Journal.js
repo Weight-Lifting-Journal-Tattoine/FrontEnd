@@ -46,7 +46,7 @@ function Journal(props) {
                   </StyledRegion>
 
                   <StyledRegion>
-                      Weight 
+                      Weight(lbs) 
                       <div>{item.weight}</div>
                   </StyledRegion>
                   </ExerciseContainer>
@@ -88,8 +88,10 @@ const ButtonStyle = styled.button`
 `
 const ExerciseContainer =styled.span`
   display:flex;
-  align-self: flex-end;
+  justify-content:flex-end;
+  margin-top:0;
   margin-bottom: 5%;
+  margin-left:5%;
 `
 
 const StyledRegion = styled.div`
@@ -99,6 +101,7 @@ const StyledRegion = styled.div`
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   margin:10%;
+  
 
 `
 
@@ -107,9 +110,10 @@ const ExerciseStyled = styled.div`
   font-size: 3rem;
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
+  margin-left:2%;
 `
 const Container = styled.div`
-  // width: 100%;
+  width: 100%;
   display:flex;
-  justify-content:space-evenly;
+  justify-content:space-between;
 `
