@@ -17,7 +17,7 @@ const CreateJournal = props => {
     const workoutValues = {
       userId: props.match.params.id,
       date: workout.date,
-      region: workout.typeOfWorkout,
+      region: workout.typeOfWorkout
     };
 
     Axios.post("restricted/journals/", workoutValues)
