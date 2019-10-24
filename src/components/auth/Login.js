@@ -22,14 +22,14 @@ const LoginForm = ({ errors, touched, setUser }) => {
         <fieldset>
           <UserNamePasswordLabel>Username</UserNamePasswordLabel>
           {touched.username && errors.username && (
-            <p className="error">{errors.username}</p>
+            <Error className="error">{errors.username}</Error>
           )}
           <StyledField type="text" name="username" placeholder="TheGovernator47" />
         </fieldset>
         <fieldset>
           <UserNamePasswordLabel>Password</UserNamePasswordLabel>
           {touched.password && errors.password && (
-            <p className="error">{errors.password}</p>
+            <Error className="error">{errors.password}</Error>
           )}
           <StyledField type="password" name="password" placeholder="******" />
         </fieldset>
@@ -92,14 +92,14 @@ export default Login;
 const StyledField =styled(Field)`
   width: 80%;
   background: white;
+  text-align: center;
   border: none;
   border-bottom: 1px solid #252627;
   border-radius: 5px;
   outline: none;
   color: #252627;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-bottom: 20px;
-  justify-content: space-between;
   `
 
 const UserNamePasswordLabel = styled.label`
@@ -151,4 +151,6 @@ const Header = styled.div`
 const Member = styled.span`
   color: black;
 `
-
+const Error = styled.p`
+  color: black;
+`

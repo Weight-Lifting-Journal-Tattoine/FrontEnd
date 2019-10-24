@@ -20,35 +20,35 @@ const RegisterForm = ({ errors, touched, setUser }) => {
       <fieldset>
         <UserNamePasswordLabel>Username</UserNamePasswordLabel>
         {touched.username && errors.username && (
-          <p className="error">{errors.username}</p>
+          <Error className="error">{errors.username}</Error>
         )}
         <StyledField type="text" name="username" placeholder="TheGovernator47" />
       </fieldset>
       <fieldset>
         <UserNamePasswordLabel>First Name</UserNamePasswordLabel>
         {touched.firstName && errors.firstName && (
-          <p className="error">{errors.firstName}</p>
+          <Error className="error">{errors.firstName}</Error>
         )}
         <StyledField type="text" name="firstName" placeholder="Arnold" />
       </fieldset>
       <fieldset>
         <UserNamePasswordLabel>Last Name</UserNamePasswordLabel>
         {touched.lastName && errors.lastName && (
-          <p className="error">{errors.lastName}</p>
+          <Error className="error">{errors.lastName}</Error>
         )}
         <StyledField type="text" name="lastName" placeholder="Schwarzenegger" />
       </fieldset>
       <fieldset>
         <UserNamePasswordLabel>Email Address</UserNamePasswordLabel>
         {touched.email && errors.email && (
-          <p className="error">{errors.email}</p>
+          <Error className="error">{errors.email}</Error>
         )}
         <StyledField type="text" name="email" placeholder="arnold@strong.com" />
       </fieldset>
       <fieldset>
         <UserNamePasswordLabel>Password</UserNamePasswordLabel>
         {touched.password && errors.password && (
-          <p className="error">{errors.password}</p>
+          <Error className="error">{errors.password}</Error>
         )}
         <StyledField type="password" name="password" placeholder="******" />
       </fieldset>
@@ -112,12 +112,13 @@ const StyledForm = styled(Form)`
 const StyledField =styled(Field)`
   width: 80%;
   background: white;
+  text-align: center;
   border: none;
   border-bottom: 1px solid #252627;
   border-radius: 5px;
   outline: none;
   color: #252627;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-bottom: 20px;
   `
 
@@ -171,5 +172,8 @@ const Header = styled.div`
 `;
 
 const Member = styled.span`
+  color: black;
+`
+const Error = styled.p`
   color: black;
 `
