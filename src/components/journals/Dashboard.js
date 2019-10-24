@@ -3,10 +3,9 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
-import Navigation from "../Navigation";
 import { Container, UserName } from "../../styled/DashStyles";
 
-function Dashboard(props) {
+function Dashboard() {
   const [journals, setJournals] = useState([]);
   const { user } = useContext(UserContext);
 
@@ -34,7 +33,6 @@ function Dashboard(props) {
 
   return (
     <Container>
-      <Navigation user={user} {...props} />
       <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
