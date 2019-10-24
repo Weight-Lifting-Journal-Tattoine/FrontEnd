@@ -32,7 +32,7 @@ const CreateJournal = props => {
     <div className="NameWorkoutTop">
       <div className="NameWorkoutContainer">
         <div className="name-workout-card">
-          <h2>Let's Journalize Those Gains Bro!</h2>
+          <h2>Let's Journalize Those Gains!</h2>
           <div className="BottomOfCard">
             <form onSubmit={handleSubmit}>
               Date:
@@ -45,7 +45,7 @@ const CreateJournal = props => {
                 onChange={inputHandler}
               />
               <label>
-                Choose Your Gains:
+                Select a Region:
                 <select
                   className="typeOfWorkout"
                   name="typeOfWorkout"
@@ -67,3 +67,5 @@ const CreateJournal = props => {
   );
 };
 export default CreateJournal;
+
+
