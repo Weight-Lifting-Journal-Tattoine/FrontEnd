@@ -29,41 +29,37 @@ const CreateJournal = props => {
   };
 
   return (
-    <div className="NameWorkoutTop">
-      <div className="NameWorkoutContainer">
-        <div className="name-workout-card">
-          <h2>Let's Journalize Those Gains!</h2>
-          <div className="BottomOfCard">
-            <form onSubmit={handleSubmit}>
-              Date:
-              <input
-                className="date"
-                type="date"
-                name="date"
-                value={workout.date}
-                placeholder="mm/dd/yyyy"
-                onChange={inputHandler}
-              />
-              <label>
-                Select a Region:
-                <select
-                  className="typeOfWorkout"
-                  name="typeOfWorkout"
-                  value={workout.typeOfWorkout}
-                  onChange={inputHandler}
-                >
-                  <option />
-                  <option>Upper Body</option>
-                  <option>Lower Body</option>
-                  <option>Core</option>
-                </select>
-              </label>
-              <button onSubmit={() => handleSubmit()}>BOOK IT!</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+    <h2>Let's Journalize Those Gains!</h2>
+    
+      <form onSubmit={handleSubmit}>
+        Date:
+        <input
+          className="date"
+          type="date"
+          name="date"
+          value={workout.date}
+          placeholder="mm/dd/yyyy"
+          onChange={inputHandler}
+        />
+        <label>
+          Select a Region:
+          <select
+            className="typeOfWorkout"
+            name="typeOfWorkout"
+            value={workout.typeOfWorkout}
+            onChange={inputHandler}
+          >
+            <option />
+            <option>Upper Body</option>
+            <option>Lower Body</option>
+            <option>Core</option>
+          </select>
+        </label>
+        <button onSubmit={() => handleSubmit()}>BOOK IT!</button>
+      </form>
+          
+    </>
   );
 };
 export default CreateJournal;

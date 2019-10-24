@@ -12,41 +12,33 @@ const LoginForm = ({ errors, touched, setUser }) => {
     
         
     <Container>
-      <Header>
-      <LogoStyle>
-        <span>Pro</span> 
-        <span>Lift</span>
-      </LogoStyle>
-      </Header>
-    
-    <StyledForm>
-      
-      <fieldset>
-        <UserNamePasswordLabel>Username</UserNamePasswordLabel>
-        {touched.username && errors.username && (
-          <p className="error">{errors.username}</p>
-        )}
-        <StyledField type="text" name="username" placeholder="TheGovernator47" />
-      </fieldset>
-      
-      <fieldset>
-        <UserNamePasswordLabel>Password</UserNamePasswordLabel>
-        {touched.password && errors.password && (
-          <p className="error">{errors.password}</p>
-        )}
-        <StyledField type="password" name="password" placeholder="******" />
-      </fieldset>
-      <ButtonStyle type="submit">Submit</ButtonStyle>
-      <p>
-        Not a member?<span> </span>
-        
-
-        
-        <Link to="/">Register</Link>.
-       
-      </p>
-    </StyledForm>
-    
+        <Header>
+          <LogoStyle>
+            <span>Pro</span> 
+            <span>Lift</span>
+          </LogoStyle>
+        </Header>
+      <StyledForm>
+        <fieldset>
+          <UserNamePasswordLabel>Username</UserNamePasswordLabel>
+          {touched.username && errors.username && (
+            <p className="error">{errors.username}</p>
+          )}
+          <StyledField type="text" name="username" placeholder="TheGovernator47" />
+        </fieldset>
+        <fieldset>
+          <UserNamePasswordLabel>Password</UserNamePasswordLabel>
+          {touched.password && errors.password && (
+            <p className="error">{errors.password}</p>
+          )}
+          <StyledField type="password" name="password" placeholder="******" />
+        </fieldset>
+        <ButtonStyle type="submit">Submit</ButtonStyle>
+        <p>
+          <Member>Not a member?</Member> <span>  </span>
+          <Link to="/">Register</Link>.
+        </p>
+      </StyledForm>
     </Container>  
   );
 };
@@ -87,16 +79,14 @@ export default Login;
 
 /*************Styles************************/
  const StyledForm = styled(Form)`
- 
   justify-content: center;
   padding-left: 20px;
   margin-top: 100px;
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   height: 100%;
   padding-bottom: 50px;
-  
   color: #ebebeb;
-  padding: 0 20px;
 `
 
 const StyledField =styled(Field)`
@@ -109,6 +99,7 @@ const StyledField =styled(Field)`
   color: #252627;
   font-size: 1.3rem;
   margin-bottom: 20px;
+  justify-content: space-between;
   `
 
 const UserNamePasswordLabel = styled.label`
@@ -119,10 +110,8 @@ const UserNamePasswordLabel = styled.label`
 `
 
 const Container = styled.div`
-  background: #ebebeb;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 0px;
+position: 'absolute', left: '50%', top: '50%',
+transform: 'translate(-50%, -50%)'
 `
 
 const ButtonStyle = styled.button`
@@ -158,4 +147,8 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const Member = styled.span`
+  color: black;
+`
 

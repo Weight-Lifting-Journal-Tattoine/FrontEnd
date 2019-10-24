@@ -54,7 +54,7 @@ const RegisterForm = ({ errors, touched, setUser }) => {
       </fieldset>
       <ButtonStyle type="submit">Submit</ButtonStyle>
       <p>
-        Already a member?<span> </span>
+        <Member>Already a member?</Member><span> </span>
         <Link to="/login">Login</Link>.
       </p>
     </StyledForm>
@@ -99,16 +99,14 @@ export default Register;
 
 /****************Styles**************/
 const StyledForm = styled(Form)`
- 
   justify-content: center;
   padding-left: 20px;
   margin-top: 100px;
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   height: 100%;
   padding-bottom: 50px;
-  
   color: #ebebeb;
-  padding: 0 20px;
 `
 
 const StyledField =styled(Field)`
@@ -171,3 +169,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const Member = styled.span`
+  color: black;
+`
