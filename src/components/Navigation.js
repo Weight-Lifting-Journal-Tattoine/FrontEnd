@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Name,
   Logo,
   Header,
   HeaderLeft,
@@ -30,9 +31,10 @@ const Navigation = ({ user, setLoggedIn }) => {
         <p>
           Logged in as:
           <br />
-          <span>
-            {user.firstName} {user.lastName}
-          </span>
+          <Name>
+            <span>{user.firstName}</span> 
+            <span>{user.lastName}</span>
+          </Name>
         </p>
         <LogoutButton onClick={() => handleClick()}>Log Out</LogoutButton>
       </Metadata>

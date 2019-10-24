@@ -5,7 +5,7 @@
 }
 
 .date{
-  width: 80%;
+  width: 50%;
   background: white;
   text-align: center;
   border: none;
@@ -13,7 +13,7 @@
   border-radius: 5px;
   outline: none;
   color: #252627;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -26,6 +26,6 @@
   border-radius: 5px;
   outline: none;
   color: #252627;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 20px;
 }

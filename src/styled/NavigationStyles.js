@@ -62,3 +62,13 @@ export const LogoutButton = styled.button`
   ${ButtonStyles};
   outline: none;
 `;
+
+export const Name = styled.div`
+color: #252627;
+font-size: 1rem;
+text-shadow: #ebebeb 1px 1px 0;
+font-family: "Alfa Slab One", cursive;
+span:first-child {
+  color: #991c27;
+}
+`
