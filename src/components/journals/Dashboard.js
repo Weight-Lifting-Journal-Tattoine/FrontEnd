@@ -3,6 +3,7 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
+import styled from 'styled-components'
 import {
   Container,
   Header,
@@ -16,13 +17,13 @@ function Dashboard(props) {
   const { user } = useContext(UserContext);
 
   const upper = journals.filter(item => {
-    return item.region === "Chest";
+    return item.region === "Upper Body";
   });
   const lower = journals.filter(item => {
-    return item.region === "Legs";
+    return item.region === "Lower Body";
   });
   const core = journals.filter(item => {
-    return item.region === "Abs";
+    return item.region === "Core";
   });
 
   useEffect(() => {
@@ -58,7 +59,7 @@ function Dashboard(props) {
         </span>
       </div>
       <Link to={`/newjournal/${user.id}`}>
-        <button>Create New Journal</button>
+        <ButtonStyle>Create New Journal</ButtonStyle>
       </Link>
       <div>
         <JournalList journals={journals} />
@@ -77,3 +78,18 @@ export default Dashboard;
 //   firstName: "admin",
 //   username: "admin"
 // };
+
+
+/***********Styles**********/
+const ButtonStyle = styled.button`
+  height: auto;
+  padding: 20px 80px;
+  background: #991c27;
+  margin-top: 20px;
+  margin-left: 0%;
+  width:40%;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  transition: 1s;
+`
