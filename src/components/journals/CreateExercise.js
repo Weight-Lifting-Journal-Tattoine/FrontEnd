@@ -9,7 +9,7 @@ function CreateExercise({ errors, touched }) {
   const fields = ["name", "sets", "reps", "weight"];
 
   return (
-    <Form>
+    <StyledForm>
       {fields.map((item, index) => {
         const error = Boolean(touched[item] && errors[item]);
 
@@ -40,7 +40,7 @@ function CreateExercise({ errors, touched }) {
       })}
 
       <ButtonStyle>Add Exercise</ButtonStyle>
-    </Form>
+    </StyledForm>
   );
 }
 
@@ -110,6 +110,10 @@ const StyledField = styled(Field)`
   font-size: 1rem;
   margin-bottom: 20px;
 `;
+
+const StyledForm = styled(Form)`
+  font-family: "Alfa Slab One", cursive;
+`
 
 const ButtonStyle = styled.button`
   height: auto;

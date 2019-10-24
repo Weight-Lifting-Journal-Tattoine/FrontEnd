@@ -56,12 +56,9 @@ const CreateJournal = props => {
               onChange={inputHandler}
             >
               <option />
-              <option>Legs</option>
-              <option>Arms</option>
-              <option>Chest</option>
-              <option>Back</option>
+              <option>Upper Body</option>
+              <option>Lower Body</option>
               <option>Core</option>
-
             </select>
           </label>
           <ButtonStyle onSubmit={() => handleSubmit()}>Submit</ButtonStyle>
