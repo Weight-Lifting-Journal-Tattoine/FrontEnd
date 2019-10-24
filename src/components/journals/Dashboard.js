@@ -3,7 +3,16 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
-import { Container, UserName } from "../../styled/DashStyles";
+
+import styled from 'styled-components'
+import {
+  Container,
+  Header,
+  Logo,
+  Name,
+  UserName
+} from "../../styled/DashStyles";
+
 
 function Dashboard() {
   const [journals, setJournals] = useState([]);
@@ -43,7 +52,7 @@ function Dashboard() {
         </span>
       </div>
       <Link to={`/newjournal/${user.id}`}>
-        <button>Create New Journal</button>
+        <ButtonStyle>Create New Journal</ButtonStyle>
       </Link>
       <div>
         <JournalList journals={journals} />
@@ -53,3 +62,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
