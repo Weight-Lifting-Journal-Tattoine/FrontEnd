@@ -17,7 +17,7 @@ export const Logo = styled.div`
   font-family: "Alfa Slab One", cursive;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   padding-left: 20px;
   span:first-child {
     color: #991c27;

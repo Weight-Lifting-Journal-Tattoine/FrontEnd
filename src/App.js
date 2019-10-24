@@ -35,20 +35,11 @@ function App(props) {
           exact
           render={props => <Register {...props} setUser={setUser} />}
         />
-<<<<<<< HEAD
-<<<<<<< HEAD:weightlifting_journal/src/App.js
-        
 
-        <Route path="/dashboard" render={props => <Dashboard {...props} />} />
-        <Route path="/journal/:id" render={props => <Journal {...props} />} />
-        <Route path="/journals" render={props => <CreateJournal {...props} />} />
-
-=======
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/journal/:id" component={Journal} />
         <PrivateRoute path="/journal" component={CreateJournal} />
->>>>>>> 96c0b900b4ac061e43a2f8d8c72e4bd841fcb146:src/App.js
-=======
+
 
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/journal/:id" component={Journal} />
@@ -58,11 +49,9 @@ function App(props) {
           path="/newjournal/:id"
           render={props => <CreateJournal {...props} user={user} />}
         />
-<<<<<<< HEAD
 
->>>>>>> 34ccbabd3520715b4b5991163e7d6d2deecebfec
-=======
->>>>>>> 24c7d113bf0f3c91b6b86ea9f63fba1dea6da26b
+
+
       </div>
     </UserContext.Provider>
   );

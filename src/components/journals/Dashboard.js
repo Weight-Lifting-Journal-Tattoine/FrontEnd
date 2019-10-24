@@ -5,11 +5,7 @@ import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
 import styled from 'styled-components'
 import {
-  Container,
-  Header,
-  Logo,
-  Name,
-  UserName
+  Logo
 } from "../../styled/DashStyles";
 
 function Dashboard(props) {
@@ -39,17 +35,11 @@ function Dashboard(props) {
   }, [user]);
 
   return (
-    <Container>
-      <Header>
+    <div>
         <Logo>
-          <span>Pro</span>
-          <span>Lift</span>
+          <span>{user.firstName}</span> 
+          <span>{user.lastName}</span>
         </Logo>
-        <Name>
-          {user.firstName} {user.lastName}
-        </Name>
-      </Header>
-      <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
         <h4>Journals by Body Region</h4>
@@ -64,7 +54,7 @@ function Dashboard(props) {
       <div>
         <JournalList journals={journals} />
       </div>
-    </Container>
+      </div>
   );
 }
 
