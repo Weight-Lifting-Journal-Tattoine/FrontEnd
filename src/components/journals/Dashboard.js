@@ -3,6 +3,8 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
+
+import styled from 'styled-components'
 import {
   Container,
   Header,
@@ -11,18 +13,19 @@ import {
   UserName
 } from "../../styled/DashStyles";
 
-function Dashboard(props) {
+
+function Dashboard() {
   const [journals, setJournals] = useState([]);
   const { user } = useContext(UserContext);
 
   const upper = journals.filter(item => {
-    return item.region === "Chest";
+    return item.region === "Upper Body";
   });
   const lower = journals.filter(item => {
-    return item.region === "Legs";
+    return item.region === "Lower Body";
   });
   const core = journals.filter(item => {
-    return item.region === "Abs";
+    return item.region === "Core";
   });
 
   useEffect(() => {
@@ -39,15 +42,6 @@ function Dashboard(props) {
 
   return (
     <Container>
-      <Header>
-        <Logo>
-          <span>Pro</span>
-          <span>Lift</span>
-        </Logo>
-        <Name>
-          {user.firstName} {user.lastName}
-        </Name>
-      </Header>
       <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
@@ -58,7 +52,7 @@ function Dashboard(props) {
         </span>
       </div>
       <Link to={`/newjournal/${user.id}`}>
-        <button>Create New Journal</button>
+        <ButtonStyle>Create New Journal</ButtonStyle>
       </Link>
       <div>
         <JournalList journals={journals} />
@@ -69,11 +63,3 @@ function Dashboard(props) {
 
 export default Dashboard;
 
-// const user = {
-//   created_at: "2019-06-23",
-//   email: "admin.gmail.com",
-//   id: 1,
-//   lastName: "admin",
-//   firstName: "admin",
-//   username: "admin"
-// };

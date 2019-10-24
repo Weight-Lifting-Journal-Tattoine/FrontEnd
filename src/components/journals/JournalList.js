@@ -16,7 +16,7 @@ function JournalList(props) {
     <div>
       {props.journals.map((journal, index) => {
         const journalExercises = exercises.filter(exercise => {
-          return exercise.journalId === 1;
+          return exercise.journalId === journal.id;
         });
         return (
           <Link to={`/journal/${journal.id}`} key={index}>

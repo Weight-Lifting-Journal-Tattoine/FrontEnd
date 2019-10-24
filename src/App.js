@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./interceptor";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
@@ -8,14 +8,23 @@ import Journal from "./components/journals/Journal";
 import { UserContext } from "./contexts/UserContext";
 import Dashboard from "./components/journals/Dashboard";
 import CreateJournal from "./components/journals/CreateJournal.js";
+import Navigation from "./components/Navigation";
 import "./App.css";
 
-function App() {
+function App(props) {
   const [user, setUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (user.id) {
+      setLoggedIn(true);
+    }
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user }}>
       <div className="App">
+        {loggedIn && <Navigation user={user} setLoggedIn={setLoggedIn} />}
         <Route
           path="/login"
           exact
