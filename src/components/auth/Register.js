@@ -121,6 +121,7 @@ const UserNamePasswordLabel = styled.label`
   font-size: 2rem;
   font-family: "Alfa Slab One", cursive;
   padding: 10px 0;
+  text-shadow: #ffffff 1px 1px 0;
 `
 
 const Container = styled.div`

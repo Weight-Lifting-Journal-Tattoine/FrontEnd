@@ -36,6 +36,7 @@ const CreateJournal = props => {
         <form onSubmit={handleSubmit}>
        
         <Date>Date</Date>
+        <label>
           <input
             className="date"
             type="date"
@@ -44,7 +45,7 @@ const CreateJournal = props => {
             placeholder="mm/dd/yyyy"
             onChange={inputHandler}
           />
-      
+        </label>
           
           <label>
             <Date>Select a Region</Date>
@@ -72,7 +73,7 @@ export default CreateJournal;
 const Title = styled.h2`
   color: #252627;
   font-size: 2.5rem;
-  text-shadow: #ebebeb 1px 1px 0;
+  text-shadow: #ffffff 1px 1px 0;
   font-family: "Alfa Slab One", cursive;
   width: 100%;
   display: flex;
@@ -83,7 +84,7 @@ const Title = styled.h2`
 }
 `
 const Date = styled.div`
-  text-shadow: #ebebeb 1px 1px 0;
+  text-shadow: #ffffff 1px 1px 0;
   font-family: "Alfa Slab One", cursive;
   font-size: 1.9rem;
   color:#991c27;
@@ -105,7 +106,7 @@ const ButtonStyle = styled.button`
   width:100%;
   border-radius: 10px;
   color: #f3f3f3;
-  font-size: 1rem;
+  font-size: 1.9rem;
   transition: 1s;
 `
 

@@ -13,7 +13,7 @@ export const Header = styled.div`
 export const Logo = styled.div`
   color: #252627;
   font-size: 2.5rem;
-  text-shadow: #ebebeb 1px 1px 0;
+  text-shadow: #ffffff 1px 1px 0;
   font-family: "Alfa Slab One", cursive;
   width: 100%;
   display: flex;

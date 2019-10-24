@@ -100,6 +100,7 @@ const UserNamePasswordLabel = styled.label`
   color: #252627;
   font-size: 2rem;
   font-family: "Alfa Slab One", cursive;
+  text-shadow: #ffffff 1px 1px 0;
   padding: 10px 0;
 `
 
