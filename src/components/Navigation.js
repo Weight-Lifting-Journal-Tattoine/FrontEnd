@@ -7,10 +7,14 @@ import {
   DashboardLink,
   LogoutButton
 } from "../styled/NavigationStyles.js";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const Navigation = ({ user, history }) => {
+const Navigation = ({ user, setLoggedIn }) => {
+  const history = useHistory();
   const handleClick = () => {
     window.localStorage.clear();
+    setLoggedIn(false);
     history.push("/login");
   };
   return (

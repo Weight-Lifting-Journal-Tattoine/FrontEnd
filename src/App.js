@@ -24,7 +24,7 @@ function App(props) {
   return (
     <UserContext.Provider value={{ user }}>
       <div className="App">
-        {loggedIn && <Navigation user={user} {...props} />}
+        {loggedIn && <Navigation user={user} setLoggedIn={setLoggedIn} />}
         <Route
           path="/login"
           exact
