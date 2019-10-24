@@ -5,7 +5,7 @@ import Axios from "axios";
 import * as Yup from "yup";
 import styled from 'styled-components'
 
-const RegisterForm = ({ errors, touched, setUser }) => {
+const RegisterForm = ({ errors, touched }) => {
   return (
 
     <Container>
@@ -63,7 +63,6 @@ const RegisterForm = ({ errors, touched, setUser }) => {
 };
 
 const Register = withFormik({
-  // ES6 method definition shorthand
   mapPropsToValues({ username, password, firstName, lastName, email }) {
     return {
       username: username || "",
@@ -73,11 +72,6 @@ const Register = withFormik({
       email: email || ""
     };
   },
-
-  /*
-   * Old JS for the above would be:
-   * mapPropsToValues: function () {...},
-   */
 
   validationSchema: Yup.object().shape({
     username: Yup.string().required("Username is required."),

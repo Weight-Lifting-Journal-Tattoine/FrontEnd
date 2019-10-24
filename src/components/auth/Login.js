@@ -44,18 +44,12 @@ const LoginForm = ({ errors, touched, setUser }) => {
 };
 
 const Login = withFormik({
-  // ES6 method definition shorthand
   mapPropsToValues({ username, password }) {
     return {
       username: username || "",
       password: password || ""
     };
   },
-
-  /*
-   * Old JS for the above would be:
-   * mapPropsToValues: function () {...},
-   */
 
   validationSchema: Yup.object().shape({
     username: Yup.string().required("Username is required."),

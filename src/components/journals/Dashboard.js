@@ -3,6 +3,7 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
+
 import styled from 'styled-components'
 import {
   Container,
@@ -12,7 +13,8 @@ import {
   UserName
 } from "../../styled/DashStyles";
 
-function Dashboard(props) {
+
+function Dashboard() {
   const [journals, setJournals] = useState([]);
   const { user } = useContext(UserContext);
 
@@ -40,15 +42,6 @@ function Dashboard(props) {
 
   return (
     <Container>
-      <Header>
-        <Logo>
-          <span>Pro</span>
-          <span>Lift</span>
-        </Logo>
-        <Name>
-          {user.firstName} {user.lastName}
-        </Name>
-      </Header>
       <UserName>{user.username}</UserName>
       <div>
         <span>Journals logged: {journals.length}</span>
@@ -70,26 +63,3 @@ function Dashboard(props) {
 
 export default Dashboard;
 
-// const user = {
-//   created_at: "2019-06-23",
-//   email: "admin.gmail.com",
-//   id: 1,
-//   lastName: "admin",
-//   firstName: "admin",
-//   username: "admin"
-// };
-
-
-/***********Styles**********/
-const ButtonStyle = styled.button`
-  height: auto;
-  padding: 20px 80px;
-  background: #991c27;
-  margin-top: 20px;
-  margin-left: 0%;
-  width:40%;
-  border-radius: 10px;
-  color: #f3f3f3;
-  font-size: 1.1rem;
-  transition: 1s;
-`
