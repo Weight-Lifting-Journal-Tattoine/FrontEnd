@@ -9,7 +9,7 @@ function CreateExercise({ errors, touched }) {
   const fields = ["name", "sets", "reps", "weight"];
 
   return (
-    <Form>
+    <StyledForm>
       {fields.map((item, index) => {
         const error = Boolean(touched[item] && errors[item]);
 
@@ -39,8 +39,8 @@ function CreateExercise({ errors, touched }) {
         );
       })}
 
-      <Button>Add Exercise</Button>
-    </Form>
+      <ButtonStyle>Add Exercise</ButtonStyle>
+    </StyledForm>
   );
 }
 
@@ -99,11 +99,40 @@ const StyledField = styled(Field)`
   margin-left: 5px;
   color: ${props => (props.error === "true" ? "red" : "black")};
   border: 1px solid ${props => (props.error === "true" ? "red" : "#cccccc")};
+  width: 40%;
+  background: white;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #252627;
+  border-radius: 5px;
+  outline: none;
+  color: #252627;
+  font-size: 1rem;
+  margin-bottom: 20px;
 `;
 
-const Button = styled.button`
-  margin-top: 15px;
-`;
+const StyledForm = styled(Form)`
+  font-family: "Alfa Slab One", cursive;
+`
+
+const ButtonStyle = styled.button`
+  height: auto;
+  padding: 20px 20px;
+  background: #991c27;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  width:40%;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  transition: 1s;
+  font-family: "Alfa Slab One", cursive;
+`
+
+
+
+
 
 /*=============== EXPORT ===============*/
 export default FormikCreateExercise;
+

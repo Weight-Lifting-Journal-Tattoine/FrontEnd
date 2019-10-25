@@ -121,6 +121,7 @@ const UserNamePasswordLabel = styled.label`
   font-size: 2rem;
   font-family: "Alfa Slab One", cursive;
   padding: 10px 0;
+  text-shadow: #ffffff 1px 1px 0;
 `
 
 const Container = styled.div`
@@ -140,8 +141,9 @@ const ButtonStyle = styled.button`
   width:100%;
   border-radius: 10px;
   color: #f3f3f3;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   transition: 1s;
+  font-family: "Alfa Slab One", cursive;
 `
 
 const LogoStyle = styled.div`

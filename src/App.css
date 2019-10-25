@@ -3,3 +3,29 @@
   margin: 0 auto;
   background-color: #ebebeb;
 }
+
+.date{
+  width: 50%;
+  background: white;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #252627;
+  border-radius: 5px;
+  outline: none;
+  color: #252627;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.typeOfWorkout{
+  width: 80%;
+  background: white;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #252627;
+  border-radius: 5px;
+  outline: none;
+  color: #252627;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}

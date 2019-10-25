@@ -38,12 +38,20 @@ function App(props) {
 
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/journal/:id" component={Journal} />
+        <PrivateRoute path="/journal" component={CreateJournal} />
+
+
+        <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/journal/:id" component={Journal} />
         <PrivateRoute exact path="/journal" component={CreateJournal} />
 
         <Route
           path="/newjournal/:id"
           render={props => <CreateJournal {...props} user={user} />}
         />
+
+
+
       </div>
     </UserContext.Provider>
   );

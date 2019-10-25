@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import CreateExercise from "./CreateExercise.js";
 import { UserContext } from "../../contexts/UserContext.js";
+import styled from "styled-components";
 
 function Journal(props) {
   const [button, setButton] = useState(false);
@@ -28,19 +29,28 @@ function Journal(props) {
         exercises.map((item, index) => {
           return (
             <div key={index}>
-              <h1>{item.name}</h1>
-              <p>
-                Sets: <span></span>
-                {item.sets}
-              </p>
-              <p>
-                Reps: <span></span>
-                {item.reps}
-              </p>
-              <p>
-                Weight: <span></span>
-                {item.weight}
-              </p>
+            <Container>
+                <ExerciseStyled>{item.name}</ExerciseStyled>
+
+                <ExerciseContainer>
+                  <StyledRegion>
+                    <div>
+                      Sets 
+                      <div>{item.sets}</div>
+                    </div>
+                  </StyledRegion>
+
+                  <StyledRegion>
+                      Reps 
+                      <div>{item.reps}</div>
+                  </StyledRegion>
+
+                  <StyledRegion>
+                      Weight(lbs) 
+                      <div>{item.weight}</div>
+                  </StyledRegion>
+                  </ExerciseContainer>
+              </Container>
             </div>
           );
         })}
@@ -53,9 +63,56 @@ function Journal(props) {
           setButton={setButton}
         />
       ) : (
-        <button onClick={() => setButton(true)}>Create Exercise</button>
+        <ButtonStyle onClick={() => setButton(true)}>Create New Exercise</ButtonStyle>
       )}
     </div>
   );
 }
 export default Journal;
+
+
+/****************Styles************/
+const ButtonStyle = styled.button`
+  height: auto;
+  padding: 10px 10px;
+  background: #991c27;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  margin-top:2%;
+  width:50%;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1rem;
+  transition: 1s;
+  font-family: "Alfa Slab One", cursive;
+`
+const ExerciseContainer =styled.span`
+  display:flex;
+  justify-content:flex-end;
+  margin-top:0;
+  margin-bottom: 5%;
+  margin-left:5%;
+`
+
+const StyledRegion = styled.div`
+  
+  color: #252627
+  font-size: 1rem;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: #ffffff 1px 1px 0;
+  margin:10%;
+  
+`
+
+const ExerciseStyled = styled.div`
+  color: #252627
+  font-size: 3rem;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: #ffffff 1px 1px 0;
+  margin-left:2%;
+`
+const Container = styled.div`
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
+`
