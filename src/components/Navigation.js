@@ -32,7 +32,7 @@ const Navigation = ({ user, setLoggedIn }) => {
           Logged in as:
           <br />
           <Name>
-            <span>{user.firstName}</span> 
+            <span>{user.firstName}</span>
             <span>{user.lastName}</span>
           </Name>
         </p>

@@ -79,7 +79,6 @@ const FormikCreateExercise = withFormik({
         console.log(response);
         resetForm();
         setSubmitting(false);
-        props.setExercises([...props.exercises, response.data.exercise]);
         props.setButton(false);
       })
       .catch(error => {
@@ -113,7 +112,7 @@ const StyledField = styled(Field)`
 
 const StyledForm = styled(Form)`
   font-family: "Alfa Slab One", cursive;
-`
+`;
 
 const ButtonStyle = styled.button`
   height: auto;
@@ -121,18 +120,13 @@ const ButtonStyle = styled.button`
   background: #991c27;
   margin-bottom: 5%;
   margin-left: 0%;
-  width:40%;
+  width: 40%;
   border-radius: 10px;
   color: #f3f3f3;
   font-size: 1.1rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
-`
-
-
-
-
+`;
 
 /*=============== EXPORT ===============*/
 export default FormikCreateExercise;
-
