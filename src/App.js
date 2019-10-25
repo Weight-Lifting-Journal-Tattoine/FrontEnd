@@ -44,9 +44,6 @@ function App(props) {
           path="/newjournal/:id"
           render={props => <CreateJournal {...props} user={user} />}
         />
-
-
-
       </div>
     </UserContext.Provider>
   );

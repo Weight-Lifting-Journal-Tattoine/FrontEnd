@@ -19,7 +19,7 @@ function Journal(props) {
         setExercises(res.data.exercises);
       })
       .catch(err => console.log(err));
-  }, [props.match.params.id]);
+  }, [props.match.params.id, button]);
 
   console.log(props);
 
@@ -29,27 +29,27 @@ function Journal(props) {
         exercises.map((item, index) => {
           return (
             <div key={index}>
-            <Container>
+              <Container>
                 <ExerciseStyled>{item.name}</ExerciseStyled>
 
                 <ExerciseContainer>
                   <StyledRegion>
                     <div>
-                      Sets 
+                      Sets
                       <div>{item.sets}</div>
                     </div>
                   </StyledRegion>
 
                   <StyledRegion>
-                      Reps 
-                      <div>{item.reps}</div>
+                    Reps
+                    <div>{item.reps}</div>
                   </StyledRegion>
 
                   <StyledRegion>
-                      Weight(lbs) 
-                      <div>{item.weight}</div>
+                    Weight(lbs)
+                    <div>{item.weight}</div>
                   </StyledRegion>
-                  </ExerciseContainer>
+                </ExerciseContainer>
               </Container>
             </div>
           );
@@ -63,13 +63,14 @@ function Journal(props) {
           setButton={setButton}
         />
       ) : (
-        <ButtonStyle onClick={() => setButton(true)}>Create New Exercise</ButtonStyle>
+        <ButtonStyle onClick={() => setButton(true)}>
+          Create New Exercise
+        </ButtonStyle>
       )}
     </div>
   );
 }
 export default Journal;
-
 
 /****************Styles************/
 const ButtonStyle = styled.button`
@@ -78,21 +79,21 @@ const ButtonStyle = styled.button`
   background: #991c27;
   margin-bottom: 5%;
   margin-left: 0%;
-  margin-top:2%;
-  width:50%;
+  margin-top: 2%;
+  width: 50%;
   border-radius: 10px;
   color: #f3f3f3;
   font-size: 1rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
-`
-const ExerciseContainer =styled.span`
-  display:flex;
-  justify-content:flex-end;
-  margin-top:0;
+`;
+const ExerciseContainer = styled.span`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0;
   margin-bottom: 5%;
-  margin-left:5%;
-`
+  margin-left: 5%;
+`;
 
 const StyledRegion = styled.div`
   
@@ -102,7 +103,7 @@ const StyledRegion = styled.div`
   text-shadow: #ffffff 1px 1px 0;
   margin:10%;
   
-`
+`;
 
 const ExerciseStyled = styled.div`
   color: #252627
@@ -110,9 +111,9 @@ const ExerciseStyled = styled.div`
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   margin-left:2%;
-`
+`;
 const Container = styled.div`
   width: 100%;
-  display:flex;
-  justify-content:space-between;
-`
+  display: flex;
+  justify-content: space-between;
+`;

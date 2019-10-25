@@ -3,28 +3,28 @@ import { Form, Field, withFormik } from "formik";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import * as Yup from "yup";
-import styled from 'styled-components';
-
-
+import styled from "styled-components";
 
 const LoginForm = ({ errors, touched, setUser }) => {
   return (
-    
-        
     <Container>
-        <Header>
-          <LogoStyle>
-            <span>Pro</span> 
-            <span>Lift</span>
-          </LogoStyle>
-        </Header>
+      <Header>
+        <LogoStyle>
+          <span>Pro</span>
+          <span>Lift</span>
+        </LogoStyle>
+      </Header>
       <StyledForm>
         <fieldset>
           <UserNamePasswordLabel>Username</UserNamePasswordLabel>
           {touched.username && errors.username && (
             <Error className="error">{errors.username}</Error>
           )}
-          <StyledField type="text" name="username" placeholder="TheGovernator47" />
+          <StyledField
+            type="text"
+            name="username"
+            placeholder="TheGovernator47"
+          />
         </fieldset>
         <fieldset>
           <UserNamePasswordLabel>Password</UserNamePasswordLabel>
@@ -35,11 +35,11 @@ const LoginForm = ({ errors, touched, setUser }) => {
         </fieldset>
         <ButtonStyle type="submit">Submit</ButtonStyle>
         <p>
-          <Member>Not a member?</Member> <span>  </span>
+          <Member>Not a member?</Member> <span> </span>
           <Link to="/">Register</Link>.
         </p>
       </StyledForm>
-    </Container>  
+    </Container>
   );
 };
 
@@ -69,10 +69,8 @@ const Login = withFormik({
 
 export default Login;
 
-
-
 /*************Styles************************/
- const StyledForm = styled(Form)`
+const StyledForm = styled(Form)`
   justify-content: center;
   padding-left: 20px;
   margin-top: 100px;
@@ -81,9 +79,9 @@ export default Login;
   height: 100%;
   padding-bottom: 50px;
   color: #ebebeb;
-`
+`;
 
-const StyledField =styled(Field)`
+const StyledField = styled(Field)`
   width: 80%;
   background: white;
   text-align: center;
@@ -94,7 +92,7 @@ const StyledField =styled(Field)`
   color: #252627;
   font-size: 1rem;
   margin-bottom: 20px;
-  `
+`;
 
 const UserNamePasswordLabel = styled.label`
   color: #252627;
@@ -102,12 +100,12 @@ const UserNamePasswordLabel = styled.label`
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   padding: 10px 0;
-`
+`;
 
 const Container = styled.div`
 position: 'absolute', left: '50%', top: '50%',
 transform: 'translate(-50%, -50%)'
-`
+`;
 
 const ButtonStyle = styled.button`
   height: auto;
@@ -115,26 +113,26 @@ const ButtonStyle = styled.button`
   background: #991c27;
   margin-top: 20px;
   margin-left: 0%;
-  width:100%;
+  width: 100%;
   border-radius: 10px;
   color: #f3f3f3;
   font-size: 1.9rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
-`
+`;
 
 const LogoStyle = styled.div`
-color: #252627;
-font-size: 2.5rem;
-text-shadow: #ebebeb 1px 1px 0;
-font-family: "Alfa Slab One", cursive;
-width: 100%;
-display: flex;
-justify-content: flex-start;
-padding-left: 20px;
-span:first-child {
-  color: #991c27;
-}
+  color: #252627;
+  font-size: 2.5rem;
+  text-shadow: #ebebeb 1px 1px 0;
+  font-family: "Alfa Slab One", cursive;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  span:first-child {
+    color: #991c27;
+  }
 `;
 
 const Header = styled.div`
@@ -146,7 +144,7 @@ const Header = styled.div`
 
 const Member = styled.span`
   color: black;
-`
+`;
 const Error = styled.p`
   color: black;
-`
+`;

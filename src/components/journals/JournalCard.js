@@ -17,7 +17,6 @@ function JournalCard(props) {
 }
 export default JournalCard;
 
-
 /**************Styles************/
 const RegionStyled = styled.div`
   color: #252627;
@@ -25,30 +24,30 @@ const RegionStyled = styled.div`
   text-shadow: #ffffff 1px 1px 0;
   font-family: "Alfa Slab One", cursive;
   width: 100%;
-  
+
   padding-left: 20px;
   span:first-child {
-  color: #991c27;
-}
-`
+    color: #991c27;
+  }
+`;
 const StyledData = styled.div`
   text-shadow: #ffffff 1px 1px 0;
   font-family: "Alfa Slab One", cursive;
   font-size: 1rem;
-  color:#991c27;
+  color: #991c27;
   text-align: center;
-`
+`;
 const Exercise = styled.div`
-color: #252627;
-font-size: 1rem;
-font-family: "Alfa Slab One", cursive;
-text-shadow: #ffffff 1px 1px 0;
-padding: 10px 0;
-`
+  color: #252627;
+  font-size: 1rem;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: #ffffff 1px 1px 0;
+  padding: 10px 0;
+`;
 
 const Container = styled.div`
   width: 100%;
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
