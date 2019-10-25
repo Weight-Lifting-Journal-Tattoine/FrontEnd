@@ -3,10 +3,8 @@ import { UserContext } from "../../contexts/UserContext";
 import Axios from "axios";
 import JournalList from "./JournalList";
 import { Link } from "react-router-dom";
-import styled from 'styled-components'
-import {
-  Logo
-} from "../../styled/DashStyles";
+import styled from "styled-components";
+import { Logo } from "../../styled/DashStyles";
 
 function Dashboard(props) {
   const [journals, setJournals] = useState([]);
@@ -36,41 +34,40 @@ function Dashboard(props) {
 
   return (
     <Container>
-        <Logo>
-          <span>{user.firstName}</span> 
-          <span>{user.lastName}</span>
-        </Logo>
-      
-        <JournalsLogged>Journals Logged <div>{journals.length}</div>
-        </JournalsLogged>
+      <Logo>
+        <span>{user.firstName}</span>
+        <span>{user.lastName}</span>
+      </Logo>
 
-        <LoggedJournals>Journals by Body Region</LoggedJournals>
-        
-        <JournalContainer>
-          <StyledRegion>
-              Upper Body 
-                <div>{upper.length}</div>
-          </StyledRegion>
-          
-          <StyledRegion>
-            Lower Body
-              <div>{lower.length}</div> 
-          </StyledRegion>
+      <JournalsLogged>
+        Journals Logged <div>{journals.length}</div>
+      </JournalsLogged>
 
-          <StyledRegion>
-            Core
-            <div>{core.length}</div>
-          </StyledRegion>
-  
-        </JournalContainer>
-        
-      
-        <Link to={`/newjournal/${user.id}`}>
-          <ButtonStyle>Create New Journal</ButtonStyle>
-        </Link>
-        <div>
-          <JournalList journals={journals} />
-        </div>
+      <LoggedJournals>Journals by Body Region</LoggedJournals>
+
+      <JournalContainer>
+        <StyledRegion>
+          Upper Body
+          <div>{upper.length}</div>
+        </StyledRegion>
+
+        <StyledRegion>
+          Lower Body
+          <div>{lower.length}</div>
+        </StyledRegion>
+
+        <StyledRegion>
+          Core
+          <div>{core.length}</div>
+        </StyledRegion>
+      </JournalContainer>
+
+      <Link to={`/newjournal/${user.id}`}>
+        <ButtonStyle>Create New Journal</ButtonStyle>
+      </Link>
+      <div>
+        <JournalList journals={journals} />
+      </div>
     </Container>
   );
 }
@@ -86,7 +83,6 @@ export default Dashboard;
 //   username: "admin"
 // };
 
-
 /***********Styles**********/
 const ButtonStyle = styled.button`
   height: auto;
@@ -94,13 +90,13 @@ const ButtonStyle = styled.button`
   background: #991c27;
   margin-bottom: 5%;
   margin-left: 0%;
-  width:40%;
+  width: 40%;
   border-radius: 10px;
   color: #f3f3f3;
   font-size: 1.1rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
-`
+`;
 
 const LoggedJournals = styled.div`
   color: #252627;
@@ -108,27 +104,26 @@ const LoggedJournals = styled.div`
   font-family: "Alfa Slab One", cursive;
   padding: 10px 0;
   text-shadow: #ffffff 1px 1px 0;
-`
+`;
 const JournalsLogged = styled.div`
   color: #252627;
   font-size: 1rem;
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   padding: 10px 0;
-`
-const JournalContainer =styled.span`
-  display:flex;
+`;
+const JournalContainer = styled.span`
+  display: flex;
   justify-content: center;
-
-`
+`;
 const StyledRegion = styled.div`
   margin: 2%;
   color: #991c27;
   font-size: 1rem;
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
-`
+`;
 
-const Container =styled.span`
-  margin-top:10%;
-`
+const Container = styled.span`
+  margin-top: 10%;
+`;
