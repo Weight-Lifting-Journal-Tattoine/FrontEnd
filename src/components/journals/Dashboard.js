@@ -129,6 +129,6 @@ const StyledRegion = styled.div`
   text-shadow: #ffffff 1px 1px 0;
 `
 
-const Container =styled.div`
+const Container =styled.span`
   margin-top:10%;
 `

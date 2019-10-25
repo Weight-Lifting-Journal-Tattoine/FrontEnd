@@ -128,9 +128,8 @@ const ButtonStyle = styled.button`
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
 `
-const DataStyled = styled.div`
-  font-family: "Alfa Slab One", cursive;
-`
+
+
 
 
 
