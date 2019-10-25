@@ -101,6 +101,7 @@ const StyledRegion = styled.div`
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   margin:10%;
+  
 `
 
 const ExerciseStyled = styled.div`
@@ -110,6 +111,8 @@ const ExerciseStyled = styled.div`
   text-shadow: #ffffff 1px 1px 0;
   margin-left:2%;
 `
-const Container =styled.div`
-  margin-top:10%;
+const Container = styled.div`
+  width: 100%;
+  display:flex;
+  justify-content:space-between;
 `
