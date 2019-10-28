@@ -11,6 +11,16 @@ function Journal(props) {
 
   console.log(user);
 
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    Axios.delete(`/restricted/exercises/${id}`).then(res => {
+      const newExercises = exercises.filter(exercise => {
+        return exercise.id !== id;
+      });
+      setExercises(newExercises);
+    });
+  };
+
   useEffect(() => {
     const id = props.match.params.id;
     Axios.get(`restricted/exercises/journal/${id}`)
@@ -48,6 +58,12 @@ function Journal(props) {
                   <StyledRegion>
                     Weight(lbs)
                     <div>{item.weight}</div>
+                  </StyledRegion>
+
+                  <StyledRegion>
+                    <button onClick={e => handleClick(e, item.id)}>
+                      Delete
+                    </button>
                   </StyledRegion>
                 </ExerciseContainer>
               </Container>

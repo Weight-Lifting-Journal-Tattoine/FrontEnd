@@ -13,7 +13,6 @@ function JournalCard(props) {
       const newJournals = journals.filter(journal => {
         return journal.id !== id;
       });
-      console.log(newJournals);
       setJournals(newJournals);
     });
   };
