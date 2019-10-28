@@ -23,7 +23,7 @@ function JournalCard(props) {
         <RegionStyled>{region}</RegionStyled>
         <StyledData>Date Created: {date[0]}</StyledData>
         <StyledData>Exercises: {props.journalExercises.length} </StyledData>
-        <button onClick={e => handleClick(e)}>Delete</button>
+        <ButtonStyle onClick={e => handleClick(e)}>Delete</ButtonStyle>
       </Exercise>
     </Container>
   );
@@ -63,4 +63,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+`;
+
+const ButtonStyle = styled.button`
+  height: auto;
+  background: #991c27;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  transition: 1s;
+  font-family: "Alfa Slab One", cursive;
 `;

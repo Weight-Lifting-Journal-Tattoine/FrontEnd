@@ -61,9 +61,9 @@ function Journal(props) {
                   </StyledRegion>
 
                   <StyledRegion>
-                    <button onClick={e => handleClick(e, item.id)}>
+                    <ButtonStyleSmall onClick={e => handleClick(e, item.id)}>
                       Delete
-                    </button>
+                    </ButtonStyleSmall>
                   </StyledRegion>
                 </ExerciseContainer>
               </Container>
@@ -103,6 +103,17 @@ const ButtonStyle = styled.button`
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
 `;
+
+const ButtonStyleSmall = styled.button`
+  height: auto;
+  background: #991c27;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1rem;
+  transition: 1s;
+  font-family: "Alfa Slab One", cursive;
+`;
+
 const ExerciseContainer = styled.span`
   display: flex;
   justify-content: flex-end;
