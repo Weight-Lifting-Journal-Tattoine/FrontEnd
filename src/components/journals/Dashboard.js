@@ -66,7 +66,7 @@ function Dashboard(props) {
         <ButtonStyle>Create New Journal</ButtonStyle>
       </Link>
       <div>
-        <JournalList journals={journals} />
+        <JournalList journals={journals} setJournals={setJournals} />
       </div>
     </Container>
   );
