@@ -11,7 +11,7 @@ function JournalCard(props) {
     e.preventDefault();
     Axios.delete(`/restricted/journals/${id}`).then(res => {
       const newJournals = journals.filter(journal => {
-        return journal.id != id;
+        return journal.id !== id;
       });
       console.log(newJournals);
       setJournals(newJournals);
