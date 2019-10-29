@@ -76,13 +76,13 @@ export default Journal;
 const ButtonStyle = styled.button`
   height: auto;
   padding: 10px 10px;
-  background: #991c27;
+  background: #efbf3b;
   margin-bottom: 5%;
   margin-left: 0%;
   margin-top: 2%;
   width: 50%;
   border-radius: 10px;
-  color: #f3f3f3;
+  color: #252627;
   font-size: 1rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;

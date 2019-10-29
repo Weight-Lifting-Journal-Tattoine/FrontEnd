@@ -7,6 +7,14 @@ import JournalCard from "./JournalCard";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  width: 49%;
+`;
+const ListContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `;
 
 function JournalList(props) {
@@ -18,7 +26,7 @@ function JournalList(props) {
   }, []);
 
   return (
-    <div>
+    <ListContainer>
       {props.journals.map((journal, index) => {
         const journalExercises = exercises.filter(exercise => {
           return exercise.journalId === journal.id;
@@ -32,7 +40,7 @@ function JournalList(props) {
           </StyledLink>
         );
       })}
-    </div>
+    </ListContainer>
   );
 }
 export default JournalList;
