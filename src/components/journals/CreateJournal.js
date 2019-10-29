@@ -99,12 +99,12 @@ const Container = styled.div`
 const ButtonStyle = styled.button`
   height: auto;
   padding: 20px 80px;
-  background: #991c27;
+  background: #efbf3b;
   margin-top: 1%;
   margin-left: 0%;
   width: 100%;
   border-radius: 10px;
-  color: #f3f3f3;
+  color: #252627;
   font-size: 1.9rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
