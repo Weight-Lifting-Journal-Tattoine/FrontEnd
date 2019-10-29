@@ -65,8 +65,9 @@ function Dashboard(props) {
       <Link to={`/newjournal/${user.id}`}>
         <ButtonStyle>Create New Journal</ButtonStyle>
       </Link>
-
-      <JournalList journals={journals} />
+      <div>
+        <JournalList journals={journals} setJournals={setJournals} />
+      </div>
     </Container>
   );
 }

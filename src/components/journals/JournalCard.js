@@ -1,9 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import Axios from "axios";
 
 function JournalCard(props) {
-  const { updated_at, region } = props.journal;
+  const { updated_at, region, id } = props.journal;
+  const { journals, setJournals } = props;
   const date = updated_at.split(" ");
+
+  const handleClick = e => {
+    e.preventDefault();
+    Axios.delete(`/restricted/journals/${id}`).then(res => {
+      const newJournals = journals.filter(journal => {
+        return journal.id !== id;
+      });
+      setJournals(newJournals);
+    });
+  };
 
   return (
     <Container>
@@ -11,6 +23,7 @@ function JournalCard(props) {
         <RegionStyled>{region}</RegionStyled>
         <StyledData>Date Created: {date[0]}</StyledData>
         <StyledData>Exercises: {props.journalExercises.length} </StyledData>
+        <ButtonStyle onClick={e => handleClick(e)}>Delete</ButtonStyle>
       </Exercise>
     </Container>
   );
@@ -55,4 +68,16 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   border: 1 px solid red;
+`;
+
+const ButtonStyle = styled.button`
+  height: auto;
+  background: #991c27;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  border-radius: 10px;
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  transition: 1s;
+  font-family: "Alfa Slab One", cursive;
 `;

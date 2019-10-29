@@ -36,6 +36,8 @@ function JournalList(props) {
             <JournalCard
               journal={journal}
               journalExercises={journalExercises}
+              journals={props.journals}
+              setJournals={props.setJournals}
             />
           </StyledLink>
         );
