@@ -87,12 +87,12 @@ export default Dashboard;
 const ButtonStyle = styled.button`
   height: auto;
   padding: 20px 20px;
-  background: #991c27;
+  background: #efbf3b;
   margin-bottom: 5%;
   margin-left: 0%;
   width: 40%;
   border-radius: 10px;
-  color: #f3f3f3;
+  color: #252627;
   font-size: 1.1rem;
   transition: 1s;
   font-family: "Alfa Slab One", cursive;
@@ -124,6 +124,10 @@ const StyledRegion = styled.div`
   text-shadow: #ffffff 1px 1px 0;
 `;
 
-const Container = styled.span`
-  margin-top: 10%;
+const Container = styled.div`
+  margin-top: 5%;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px;
+  border-radius: 5px;
+  width: 100%;
 `;

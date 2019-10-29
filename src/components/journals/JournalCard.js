@@ -52,10 +52,14 @@ const StyledData = styled.div`
 `;
 const Exercise = styled.div`
   color: #252627;
+  width: 75%;
   font-size: 1rem;
   font-family: "Alfa Slab One", cursive;
   text-shadow: #ffffff 1px 1px 0;
   padding: 10px 0;
+  margin: 20px;
+  background-color: rgba(37, 38, 39, 0.3);
+  box-shadow: 2px 2px 5px;
 `;
 
 const Container = styled.div`
@@ -63,6 +67,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 1 px solid red;
 `;
 
 const ButtonStyle = styled.button`
