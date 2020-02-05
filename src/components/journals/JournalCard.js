@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Card } from 'semantic-ui-react';
 
 function JournalCard(props) {
   const { updated_at, region } = props.journal;
@@ -7,12 +8,15 @@ function JournalCard(props) {
 
   return (
     <Container>
+    <Card>
       <Exercise>
         <RegionStyled>{region}</RegionStyled>
         <StyledData>Date Created: {date[0]}</StyledData>
         <StyledData>Exercises: {props.journalExercises.length} </StyledData>
       </Exercise>
+    </Card>
     </Container>
+   
   );
 }
 export default JournalCard;
@@ -46,8 +50,7 @@ const Exercise = styled.div`
 `;
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
