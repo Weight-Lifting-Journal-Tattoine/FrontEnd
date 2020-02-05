@@ -10,8 +10,8 @@ const RegisterForm = ({ errors, touched }) => {
     <Container>
       <Header>
         <LogoStyle>
-          <span>Pro</span>
-          <span>Lift</span>
+          <span>Watch</span>
+          <span>Yourself</span>
         </LogoStyle>
       </Header>
       <StyledForm>
